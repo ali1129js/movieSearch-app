@@ -2,11 +2,12 @@
  * @Author: Ali
  * @Date:   2019-01-14T12:47:25+01:00
  * @Last modified by:   Ali
- * @Last modified time: 2019-01-14T12:47:25+01:00
+ * @Last modified time: 2019-01-14T17:29:49+01:00
  */
 
 import React from "react";
 import ReactDOM from "react-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import App from "./Components/App";
 import * as serviceWorker from "./serviceWorker";

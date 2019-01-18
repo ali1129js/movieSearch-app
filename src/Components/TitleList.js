@@ -2,7 +2,7 @@
  * @Author: Ali
  * @Date:   2019-01-14T12:44:56+01:00
  * @Last modified by:   Ali
- * @Last modified time: 2019-01-14T13:29:18+01:00
+ * @Last modified time: 2019-01-15T10:35:12+01:00
  */
 import React, { Component } from "react";
 
@@ -19,14 +19,29 @@ class TitleList extends Component {
     }`;
     fetch(reqUrl)
       .then(res => res.json())
-      .then(data => console.log(data))
+      .then(data => this.setState({ data }))
       .catch(error => console.log("Something is wrong with fetch"));
   };
   componentDidMount() {
     this.loadContent();
   }
   render() {
-    return <div>TitleList</div>;
+    if (!this.state.data.results) {
+      return <div className="">loading</div>;
+    } else {
+      return (
+        <div>
+          {this.state.data.results.map(block => (
+            <div className="bb">
+              <div className="nn">
+                {" "}
+                <div className="titlelist"> {block.title}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      );
+    }
   }
 }
 export default TitleList;

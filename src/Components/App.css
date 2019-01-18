@@ -2,9 +2,18 @@
  * @Author: Ali
  * @Date:   2019-01-14T12:31:31+01:00
  * @Last modified by:   Ali
- * @Last modified time: 2019-01-14T12:31:31+01:00
+ * @Last modified time: 2019-01-18T09:02:30+01:00
  */
 
 .App {
   text-align: center;
+
+}
+.titlelist {
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  justify-content: center;
+  border: dotted;
+  border-color: 2px solid blue;
+
 }
