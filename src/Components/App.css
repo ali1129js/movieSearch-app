@@ -2,18 +2,42 @@
  * @Author: Ali
  * @Date:   2019-01-14T12:31:31+01:00
  * @Last modified by:   Ali
- * @Last modified time: 2019-01-18T09:02:30+01:00
+ * @Last modified time: 2019-03-27T15:31:11+01:00
  */
 
 .App {
   text-align: center;
 
 }
-.titlelist {
-  display:grid;
-  grid-template-columns: repeat(3,1fr);
-  justify-content: center;
-  border: dotted;
-  border-color: 2px solid blue;
 
+.item {
+	width: 182px;
+	background-color: #9b59b6;
+	flex: 1 0 auto;
+  height: 300px;
+	background-position: center;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	margin-right: 20px;
+  margin-bottom: 10px;
+	transition: background-color 5s ;
+  box-shadow: 10px 10px 5px #2d3436;
+  border-radius: 5px;
+  text-align: center;
+
+	&:nth-child(n+6) {
+		margin-top: 20px;
+	}
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+.item:hover {
+  background-color:#ffffff;
+
+}
+img{
+  height: 100%;
 }

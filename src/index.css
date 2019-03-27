@@ -1,3 +1,10 @@
+/**
+ * @Author: Ali
+ * @Date:   2019-03-27T11:36:53+01:00
+ * @Last modified by:   Ali
+ * @Last modified time: 2019-03-27T11:41:27+01:00
+ */
+
 body {
   margin: 0;
   padding: 0;
@@ -6,6 +13,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #03A9F4;
+    font-size: 24px;
 }
 
 code {

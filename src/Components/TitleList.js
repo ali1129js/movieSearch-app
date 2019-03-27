@@ -2,10 +2,10 @@
  * @Author: Ali
  * @Date:   2019-01-14T12:44:56+01:00
  * @Last modified by:   Ali
- * @Last modified time: 2019-01-15T10:35:12+01:00
+ * @Last modified time: 2019-03-27T15:28:33+01:00
  */
 import React, { Component } from "react";
-
+import TitleComponent from "./TitleComponent";
 class TitleList extends Component {
   constructor(props) {
     super(props);
@@ -20,26 +20,34 @@ class TitleList extends Component {
     fetch(reqUrl)
       .then(res => res.json())
       .then(data => this.setState({ data }))
-      .catch(error => console.log("Something is wrong with fetch"));
+      .catch(error => console.error("Something is wrong with fetch"));
   };
   componentDidMount() {
     this.loadContent();
   }
   render() {
     if (!this.state.data.results) {
-      return <div className="">loading</div>;
+      return <div className="">loading...</div>;
     } else {
       return (
-        <div>
-          {this.state.data.results.map(block => (
-            <div className="bb">
-              <div className="nn">
-                {" "}
-                <div className="titlelist"> {block.title}</div>
-              </div>
+        <>
+          {" "}
+          <div className="wrapper">
+            <strong> {this.props.title} </strong>
+            <div className="row">
+              {this.state.data.results.slice(0, 10).map(block => (
+                <TitleComponent
+                  key={block.id}
+                  title={block.title}
+                  overview={block.overview}
+                  poster={block.poster_path}
+                  votes={block.vote_average}
+                  backdrop={block.backdrop_path}
+                />
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        </>
       );
     }
   }
