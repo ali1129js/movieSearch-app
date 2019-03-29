@@ -2,7 +2,7 @@
  * @Author: Ali
  * @Date:   2019-01-14T12:31:31+01:00
  * @Last modified by:   Ali
- * @Last modified time: 2019-03-29T08:42:35+01:00
+ * @Last modified time: 2019-03-29T13:09:21+01:00
  */
 
 .App {
@@ -20,7 +20,7 @@
 	background-repeat: no-repeat;
 	overflow: hidden;
 	margin-right: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 	transition: background-color 5s ;
   box-shadow: 10px 10px 5px #2d3436;
   border-radius: 5px;
@@ -46,16 +46,19 @@ img{
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 20px;
+
 }
 input[type="submit"] {
   padding: 5px;
-  background-color: transparent;
+  background-color: silver;
   color: black;
   border: 1px solid black;
   width: 80px;
   margin-left: 5px;
   cursor: pointer;
+  border-radius: 20px;
+  box-shadow: 10px 10px 5px #2d3436;
 }
 input[type="submit"]:hover {
   background-color: #282c34;
@@ -64,4 +67,8 @@ input[type="submit"]:hover {
 .search > input[type="text"]{
   width: 40%;
   min-width: 150px;
+  border-radius: 20px;
+  box-shadow: 10px 10px 5px #2d3436;
+  margin-right: 15px;
+  padding-left: 25px;
 }

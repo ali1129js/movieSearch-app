@@ -2,39 +2,26 @@
  * @Author: Ali
  * @Date:   2019-01-14T12:29:10+01:00
  * @Last modified by:   Ali
- * @Last modified time: 2019-03-29T12:28:15+01:00
+ * @Last modified time: 2019-03-29T13:12:51+01:00
  */
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Search from "./Search";
 import TitleList from "./TitleList";
 import "./App.css";
 
 const App = () => {
-  const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState([]);
-  const [errorMessage, setErrorMessage] = useState(null);
   const search = searchValue => {
-    setLoading(true);
-    setErrorMessage(null);
     const reqUrl = `https://api.themoviedb.org/3/search/multi?query=${searchValue}&api_key=${
       process.env.REACT_APP_API_KEY
     }`;
-    console.log(reqUrl);
     fetch(reqUrl)
       .then(response => response.json())
-      .then(jsonResponse => {
-        if (jsonResponse.Response === "True") {
-          setMovies(jsonResponse.Search);
-          setLoading(false);
-        } else {
-          setErrorMessage(jsonResponse.Error);
-          setLoading(false);
-        }
-      });
+      .then(data => setMovies(data.results));
   };
   return (
     <div className="container-fluid">
-      <Search search={search} />
+      <Search search={search} results={movies} />
       <div className="row">
         <TitleList
           title="Trending now"
