@@ -2,7 +2,7 @@
  * @Author: Ali
  * @Date:   2019-01-14T12:44:56+01:00
  * @Last modified by:   Ali
- * @Last modified time: 2019-03-29T08:34:45+01:00
+ * @Last modified time: 2019-04-05T17:40:36+02:00
  */
 import React, { Component } from "react";
 import TitleComponent from "./TitleComponent";
@@ -31,11 +31,10 @@ class TitleList extends Component {
     } else {
       return (
         <>
-          {" "}
           <div className="wrapper">
             <strong> {this.props.title} </strong>
             <div className="row">
-              {this.state.data.results.slice(0, 10).map(block => (
+              {this.state.data.results.map(block => (
                 <TitleComponent
                   key={block.id}
                   title={block.title}

@@ -2,7 +2,7 @@
  * @Author: Ali
  * @Date:   2019-01-14T12:29:10+01:00
  * @Last modified by:   Ali
- * @Last modified time: 2019-03-29T13:12:51+01:00
+ * @Last modified time: 2019-04-05T17:36:31+02:00
  */
 import React, { useState } from "react";
 import Search from "./Search";
@@ -10,6 +10,7 @@ import TitleList from "./TitleList";
 import "./App.css";
 
 const App = () => {
+  //Hooks
   const [movies, setMovies] = useState([]);
   const search = searchValue => {
     const reqUrl = `https://api.themoviedb.org/3/search/multi?query=${searchValue}&api_key=${
