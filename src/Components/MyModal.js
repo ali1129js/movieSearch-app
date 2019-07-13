@@ -2,17 +2,17 @@
  * @Author: Ali
  * @Date:   2019-03-29T13:28:37+01:00
  * @Last modified by:   Ali
- * @Last modified time: 2019-04-05T18:25:02+02:00
+ * @Last modified time: 2019-07-13T12:58:38+02:00
  */
 import React from "react";
 import styled from "styled-components";
 const Content = styled.div`
   background: linear-gradient(to bottom right, #3498db, papayawhip, #8e44ad);
   margin: auto;
-  height: 28em;
-  width: 32em;
-  font-size: 1.2em;
+  box-shadow: 10px 10px 10px #2d3436;
+  font-size: 1em;
   text-align: center;
+  height: 80vh;
 `;
 const backdropStyle = {
   position: "fixed",
@@ -29,20 +29,25 @@ const MyModal = props => {
   }
   return (
     <div className="backdrop" style={backdropStyle}>
-      <div className="modal-body">
-        <div className="header">
-          <button className="btn btn-outline-dark" onClick={props.onClose}>
-            Close
-          </button>
+      <div className="row">
+        <div className="col-xs-12">
+          <div className="modal-body">
+            <div className="header">
+              <button className="btn btn-outline-dark" onClick={props.onClose}>
+                Close
+              </button>
+            </div>
+            <Content>
+              {props.title}
+              <p> {props.overview} </p>
+              <img
+                src={`https://image.tmdb.org/t/p/original/${props.backdrop}`}
+                alt={props.title}
+                width="50%"
+              />
+            </Content>
+          </div>
         </div>
-        <Content>
-          {props.title}
-          <p> {props.overview} </p>
-          <img
-            src={`https://image.tmdb.org/t/p/original/${props.backdrop}`}
-            alt={props.title}
-          />
-        </Content>
       </div>
     </div>
   );
